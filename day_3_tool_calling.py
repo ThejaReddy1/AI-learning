@@ -56,7 +56,7 @@ def call(prompt, system=None):
 
     # Call the model with the prompt and tool, and get the function call response
     response = client.models.generate_content(
-        model="gemini-3.1-flash-lite",
+        model="gemma-4-31b-it",
         contents = prompt,
         config = types.GenerateContentConfig(temperature=0, tools=[tool])
     )
@@ -98,7 +98,7 @@ def call(prompt, system=None):
         config.system_instruction=system
 
     final_response = client.models.generate_content(
-        model="gemini-3.1-flash-lite",
+        model="gemma-4-31b-it",
         contents = [user_prompt_content, function_call_content, function_response_content],
         config = config
     )
