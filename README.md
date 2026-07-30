@@ -1,24 +1,25 @@
 # 45-Day AI Challenge
 
-This repository contains Python experiments for learning prompt engineering, structured prompting, and tool calling with Google Gemini / Google GenAI models. It was created as part of a hands-on 45-day AI learning challenge.
+This repository contains Python experiments for learning prompt engineering, structured prompting, tool calling, and Google ADK agent workflows. It was created as part of a hands-on 45-day AI learning challenge.
 
 ## Project Overview
 
 The project includes example scripts that demonstrate:
 
-- Using the Google GenAI SDK to call Gemini-style models
+- Calling Gemini/GenAI models with the Google GenAI SDK
 - Prompt engineering patterns such as zero-shot, few-shot, and system instructions
-- Function/tool calling with a calculator-style example
-- Temperature-based response behavior and usage metadata
-- An iterative agent loop with tool calls and response validation
+- Function/tool calling and JSON-constrained model responses
+- Experimenting with temperature to compare deterministic and creative outputs
+- Google ADK agent orchestration with `Agent`, `Runner`, and session state
 
 ## Repository Structure
 
-- [main.py](main.py) — runs the same prompt at different temperatures to compare response variation
+- [main.py](main.py) — compares output for the same prompt at different temperatures
 - [day_2_prompt_patterns.py](day_2_prompt_patterns.py) — demonstrates zero-shot, few-shot, and system prompt strategies
-- [day_3_tool_calling.py](day_3_tool_calling.py) — shows how to define a tool and let the model call it through a function declaration
-- [day4_agent_loop.py](day4_agent_loop.py) — extends tool calling into an agent loop with multiple tool functions and response history
-- [requirements.txt](requirements.txt) — Python dependencies for the project
+- [day_3_tool_calling.py](day_3_tool_calling.py) — shows how to define a tool function and let the model invoke it via function declaration
+- [day4_agent_loop.py](day4_agent_loop.py) — explains how the agent loop works under the hood using raw Python and model API calls
+- [day5_adk.py](day5_adk.py) — builds the `Agent`, `Runner`, and `InMemorySessionService` workflow for ADK agent execution
+- [requirements.txt](requirements.txt) — Python dependency pins for the project
 - [pyproject.toml](pyproject.toml) — project metadata and dependency configuration
 
 ## Requirements
@@ -55,20 +56,22 @@ python main.py
 python day_2_prompt_patterns.py
 python day_3_tool_calling.py
 python day4_agent_loop.py
+python day5_adk.py
 ```
 
-If you are using `uv`, the same commands work with:
+If you are using `uv`, these commands also work with:
 
 ```bash
 uv run python main.py
 uv run python day_2_prompt_patterns.py
 uv run python day_3_tool_calling.py
 uv run python day4_agent_loop.py
+uv run python day5_adk.py
 ```
 
 ## Notes
 
-- The project uses `google-adk` and `python-dotenv`.
+- The project uses `google-adk`, `adk`, and `dotenv` for Google ADK/GenAI integration and environment loading.
 - The scripts are learning examples and not intended for production deployment.
-- Model output can vary with model choice, prompt structure, and temperature settings.
+- Model output can vary with prompt design, temperature, and model selection.
 - Keep your API key secret and do not commit `.env` to version control.
