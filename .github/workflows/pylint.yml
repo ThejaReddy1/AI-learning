@@ -20,7 +20,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install uv
-        uv pip install --system pylint
+        uv add pylint
+        uv sync
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
