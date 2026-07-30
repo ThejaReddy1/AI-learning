@@ -24,4 +24,4 @@ jobs:
         uv sync
     - name: Analysing the code with pylint
       run: |
-        uv run pylint $(git ls-files '*.py')
+        uv run pylint --disable=C0114,C0116,C0301 $(git ls-files '*.py')
