@@ -19,6 +19,7 @@ The project includes example scripts that demonstrate:
 - [day_3_tool_calling.py](day_3_tool_calling.py) — shows how to define a tool function and let the model invoke it via function declaration
 - [day4_agent_loop.py](day4_agent_loop.py) — explains how the agent loop works under the hood using raw Python and model API calls
 - [day5_adk.py](day5_adk.py) — builds the `Agent`, `Runner`, and `InMemorySessionService` workflow for ADK agent execution
+- [day_6_RAG_fundamentales.py](day_6_RAG_fundamentales.py) — demonstrates retrieval-augmented generation (RAG) with embeddings, similarity search, and context-augmented prompting
 - [requirements.txt](requirements.txt) — Python dependency pins for the project
 - [pyproject.toml](pyproject.toml) — project metadata and dependency configuration
 
@@ -57,6 +58,7 @@ python day_2_prompt_patterns.py
 python day_3_tool_calling.py
 python day4_agent_loop.py
 python day5_adk.py
+python day_6_RAG_fundamentales.py
 ```
 
 If you are using `uv`, these commands also work with:
@@ -67,6 +69,7 @@ uv run python day_2_prompt_patterns.py
 uv run python day_3_tool_calling.py
 uv run python day4_agent_loop.py
 uv run python day5_adk.py
+uv run python day_6_RAG_fundamentales.py
 ```
 
 ## Notes
