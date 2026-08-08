@@ -8,4 +8,5 @@ dependencies = [
     "adk>=0.0.5",
     "dotenv>=0.9.9",
     "google-adk>=2.5.0",
+    "numpy>=2.5.1",
 ]
